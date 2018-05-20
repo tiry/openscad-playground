@@ -62,12 +62,13 @@ module nuxeo_2D(){
 //linear_extrude(height = 100, center = true, convexity = 10, twist = 0, $fn = 10)
 //nuxeo_2D();
 
-nuxeo();
-translate([-22,-15,-2.5])cube([20,5,5], center=true);
-translate([22,-15,-2.5])cube([20,5,5], center=true);
-translate([-75,0,-2.5])cube([20,5,5], center=true);
-translate([+75,0,-2.5])cube([20,5,5], center=true);
+//nuxeo();
+//translate([-22,-15,-2.5])cube([20,5,5], center=true);
+//translate([22,-15,-2.5])cube([20,5,5], center=true);
+//translate([-75,0,-2.5])cube([20,5,5], center=true);
+//translate([+75,0,-2.5])cube([20,5,5], center=true);
 
-import("/home/tiry/Download/MovedSpeakers.stl", convexity=3);
-
-//nuxeo_2D();
+difference(){
+    scale([2.5, 2.5, 2.5])translate([0])import("/home/tiry/Downloads/MovedSpeakers2.stl", convexity=3);
+   translate([50,0,-10])rotate([0,0,28])nuxeo();
+}
